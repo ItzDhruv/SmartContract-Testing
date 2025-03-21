@@ -75,4 +75,9 @@ describe("Advance Bank Contract", function () {
     expect(await token.connect(user2).getBalance()).to.equal(50);
     expect(await token.connect(user1).getBalance()).to.equal(50);
   })
+  it("should set interest rate", async function () {
+    expect(await token.interestRate()).to.equal(5); // Check contract ma apeli interest rate
+    await token.setInterestRate(10); // Set new interest rate
+    expect(await token.interestRate()).to.equal(10); // Check if updated
+});
 });
