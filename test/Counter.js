@@ -22,7 +22,7 @@ describe("Increase-Decrease Contract", function () {
     expect(await token.getCount()).to.equal(BigInt(0));
   })
   
-  it("should not alloweb decrement at 0", async function () {
+  it("should not allowed decrement at 0", async function () {
 
      expect(await token.getCount()).to.equal(BigInt(0));
      expect(token.decrement()).to.be.revertedWith("Count cannot be negative")
